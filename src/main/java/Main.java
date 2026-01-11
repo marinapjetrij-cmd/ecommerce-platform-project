@@ -1,17 +1,34 @@
 package ecommerce;
 
-public class Main {
-    public static void main(String[] args) {
+public class Product {
 
-        User user = new User("Almira", "almira@email.com");
+    private int id;
+    private String name;
+    private double price;
 
-        Product p1 = new Product(1, "Laptop", 1200.0);
-        Product p2 = new Product(2, "Mouse", 25.0);
+    public Product(int id, String name, double price) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
-        ShoppingCart cart = new ShoppingCart(user);
-        cart.addProduct(p1);
-        cart.addProduct(p2);
+    public int getId() {
+        return id;
+    }
 
-        cart.printReceipt();
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String displayProduct() {
+        return name + " - " + price;
     }
 }
